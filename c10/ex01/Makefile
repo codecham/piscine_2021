@@ -1,10 +1,13 @@
-NAME    = ft_display_file
+NAME    = ft_cat
 
 CC      = gcc
 
 CFLAGS  = -Wall -Wextra -Werror
 
-SRCS    = ft_display_file.c
+SRCS    = 	ft_cat.c \
+			ft_display_file.c \
+			ft_display_stdin.c \
+			ft_puterr.c
 
 OBJS    = ${SRCS:.c=.o}
 

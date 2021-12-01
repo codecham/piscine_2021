@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cat.c                                           :+:      :+:    :+:   */
+/*   ft_cat.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 19:06:14 by dcorenti          #+#    #+#             */
-/*   Updated: 2021/12/01 05:52:21 by dcorenti         ###   ########.fr       */
+/*   Created: 2021/11/30 19:03:10 by dcorenti          #+#    #+#             */
+/*   Updated: 2021/12/01 08:46:52 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_cat.h"
+#ifndef FT_CAT_H
+# define FT_CAT_H
 
-int main(int argc, char **argv)
-{
-	char	*exec_name;
-	int		i;
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <libgen.h>
+#include <string.h>
+#include <stdio.h>
 
-	i = 0;
-	exec_name = basename(argv[0]);
-	if (argc < 2)
-		ft_puterr(exec_name, NULL, strerror(errno));
-	while (++i < argc)
-	{
-		if (argv[i][0] != '-')
-		{
-			if (ft_display_file(argv[i]) == 0)
-				ft_puterr(exec_name, argv[i], strerror(errno));
-		}
-	}
-	return (0);
-}
+int		ft_display_file(char *path);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_puterr(char *exec_name, char *path, char *error);
+void	ft_putstrn(char *str, int n);
+void	ft_display_stdin();
+
+
+#endif

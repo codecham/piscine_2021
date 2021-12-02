@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 22:00:31 by dcorenti          #+#    #+#             */
-/*   Updated: 2021/12/02 22:26:20 by dcorenti         ###   ########.fr       */
+/*   Updated: 2021/12/02 22:31:55 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char *ft_itoa(int nbr)
 	i = 0;
 	long_nbr = nbr;									// On copie la valeur du nombre dans notre long
 	result = (char *)malloc(sizeof(char) * 40);		// On Malloc 40 char (c'est suffisant)
-	if (long_nbr == 0)								// Le 0 est toujours un cas spécialement chiant a traiter donc on fait une condition rien que pour lui
+	if (long_nbr == 0)								// Le 0 est toujours un cas spécialement chiant à traiter donc on fait une condition rien que pour lui
 	{
 		result[0] = '0';							// On y place le '0' (en caractere hein.. pas en int)
 		result[1] = '\0';							// On y place le \0
@@ -56,7 +56,7 @@ char *ft_itoa(int nbr)
 		i++;										// On incrémente le i pour se placer au prochain index et pas effacer le '-'
 	}
 	div = ft_calcul_div_size(long_nbr);				// On calcul la taille de notre diviseur (Bien faire ça aprés avec changer le nombre en positif si besoin)
-	while (div > 0)									// Tant que notre div est plus grand que 0 on effectue la converssion
+	while (div > 0)									// Tant que notre div est plus grand que 0 on effectue la conversion
 	{
 		result[i] = long_nbr / div + '0';			// On place dans notre string le nombre divisé par div + '0' pour passer en char
 		long_nbr = long_nbr % div;					// On fait notre nombre % div pour enlever le premier chiffre
